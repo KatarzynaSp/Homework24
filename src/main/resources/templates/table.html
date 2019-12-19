@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.///www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep Online</title>
+</head>
+<body>
+
+<div th:if="not${products.isEmpty()}">
+    <h1>Produkty</h1>
+    <table border="1">
+        <tr>
+            <th>Nazwa</th>
+            <th>Cena</th>
+        </tr>
+        <tr th:each="product: ${products}" th:object="${product}">
+            <td th:text="*{name}"></td>
+            <td th:text="*{price}"></td>
+        </tr>
+        <tr>
+            <td text=>Suma</td>
+            <td th:text=" ${sum}"></td>
+        </tr>
+    </table>
+</div>
+<div th:if="${products.isEmpty()}">
+    <h1>Nie dodałeś produktów jeszcze</h1>
+</div>
+</body>
+</html>

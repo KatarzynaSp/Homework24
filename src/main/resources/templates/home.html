@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns:th="http.///www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep Online</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="banner">
+    <h1>Sklep online</h1>
+</div>
+<form method="post" th:action="@{/}" th:object="${product}">
+    <h3>Dodaj produkt do listy:</h3>
+    Nazwa produktu: <input type="text" name="name" th:field="*{name}" placeholder="nazwa"><br/>
+    Cena: <input type="text" name="price" th:field="*{price}" placeholder="cena"><br/>
+    <input type="submit" value="dodaj"><br/><br/>
+    <a href="/lista">Wyświetl listę</a><br/>
+    <a href="/tabela">Wyświetl tabelę</a>
+</form>
+</body>
+</html>
